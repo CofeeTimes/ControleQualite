@@ -38,3 +38,7 @@ mvn test
 
 
 Solution: https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html
+
+    <maven.compiler.source>11</maven.compiler.source> <!-- Necessary -->
+    <maven.compiler.target>11</maven.compiler.target>  
+    <version>4.13.1</version> <!-- Necessary, if not 4.13.1, does not work -->
