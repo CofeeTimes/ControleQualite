@@ -2,35 +2,36 @@ def my_heap_sort(A):
     heap_size = len(A)
     build_heap(A, heap_size)
 
-    for i in range(heap_size -1, 1, -1):
+    for i in range(heap_size -1, 0, -1):
         A[0], A[i] = A[i], A[0]
         heap_size -= 1
+        pile_up(A, 1, heap_size)
 
 def build_heap(A, heap_size):
     for i in range((int)(heap_size/2), 0, -1):
-        pile_up(A, i)
+        pile_up(A, i, heap_size)
 
-def pile_up(A, i):
+def pile_up(A, i, heap_size):
     l = left(i)
     r = right(i)
 
-    if l<= len(A) and A[l-1] > A[i]:
+    if l<= heap_size and A[l-1] > A[i-1]:
         max = l
     else:
         max = i
 
-    if r <= len(A) and A[r-1] > A[max]:
+    if r <= heap_size and A[r-1] > A[max-1]:
         max = r
 
     if max != i:
-        A[i], A[max] = A[max], A[i]
-        pile_up(A, max)
+        A[i-1], A[max-1] = A[max-1], A[i-1]
+        pile_up(A, max, heap_size)
 
 def left(i):
     return 2 * i
 
 def right(i):
-    return 0
+    return 2 * i + 1
 
 def main():
     A = [4, 1, 3, 2, 16, 9, 10, 14, 8, 7]
@@ -40,4 +41,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# Output: [16, 14, 10, 8, 7, 9, 3, 2, 4, 1]
+# Output: [1, 2, 3, 4, 7, 8, 9, 10, 14, 16]
