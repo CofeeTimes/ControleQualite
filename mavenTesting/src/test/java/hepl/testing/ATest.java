@@ -11,6 +11,7 @@ import org.mockito.Mockito;
 import static org.mockito.Mockito.*;
 import org.mockito.runners.MockitoJUnitRunner;
 
+@SuppressWarnings({ "deprecation", "unused" }) // If not problems with deprecated methods and unused variables
 @RunWith(MockitoJUnitRunner.class)
 public class ATest {
     A a;
