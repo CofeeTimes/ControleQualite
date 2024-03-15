@@ -34,4 +34,7 @@ Thumbs.db
 *.pyc
 *.coverage
 htmlcov/
+
+# Ignore maven build directory
+target/
 ```
