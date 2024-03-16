@@ -1,3 +1,6 @@
+import timeit
+
+mysetup='''
 def my_bubble_sort(A):
     for i in range(0, len(A) - 1, 1):
         for j in range(len(A) - 1, i, -1):
@@ -27,3 +30,7 @@ if __name__ == "__main__":
     main()
 
 # Output: [1, 2, 3, 4, 7, 8, 9, 10, 14, 16]
+'''
+
+mycode = "main()"
+print(timeit.timeit(setup = mysetup, stmt = mycode, number = 10))

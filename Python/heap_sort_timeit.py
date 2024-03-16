@@ -1,3 +1,6 @@
+import timeit
+
+mysetup='''
 def my_heap_sort(A):
     heap_size = len(A)
     build_heap(A, heap_size)
@@ -56,3 +59,7 @@ if __name__ == "__main__":
     main()
 
 # Output: [1, 2, 3, 4, 7, 8, 9, 10, 14, 16]
+'''
+
+mycode = "main()"
+print(timeit.timeit(setup = mysetup, stmt = mycode, number = 10))
