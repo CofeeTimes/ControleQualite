@@ -37,4 +37,11 @@ htmlcov/
 
 # Ignore maven build directory
 target/
+
+# Ignore LaTeX documentation directory and  build
+documentation/
+outils/outils.aux
+outils/outils.log
+outils/outils.out
+outils/outils.toc
 ```
